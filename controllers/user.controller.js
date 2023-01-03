@@ -62,7 +62,8 @@ const usersDelete = async (req, res) => {
   // Fisicamente lo borramos
   // const usuario = await Usuario.findByIdAndDelete(id);
 
-  // Hacemos esto por si el usuario modifico datos y asi saber que ususario fue  
+  // Hacemos esto por si el usuario modifico datos y asi saber que ususario fue 
+   
   const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
 
   res.json({
