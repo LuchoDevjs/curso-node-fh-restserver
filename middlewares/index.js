@@ -1,3 +1,4 @@
-export { validarCampos } from "../middlewares/validar-campos.js";
-export { validarJWT } from "../middlewares/validar-jwt.js";
-export { esAdminRole, tieneRol } from "../middlewares/validar-roles.js";
+export { validarArchivoSubir } from "./validar-archivo.js";
+export { validarCampos } from "./validar-campos.js";
+export { validarJWT } from "./validar-jwt.js";
+export { esAdminRole, tieneRol } from "./validar-roles.js";

@@ -1,7 +1,7 @@
 import Rol from "../models/rol.js";
 import Usuario from "../models/user.models.js";
 import Categoria from "../models/categoria.js";
-import Producto from "../models/producto.js"
+import Producto from "../models/producto.js";
 
 // Ver por que no me deja importar de esta manera
 // import {Categoria,Usuario} from '../models/index.js'
@@ -44,10 +44,24 @@ const existeProductoPorId = async (id) => {
   }
 };
 
+// Validar coleccion permitidas
+
+const coleccionesPermitidas = (coleccion = "", colecciones = []) => {
+  const incluida = colecciones.includes(coleccion);
+  if (!incluida) {
+    throw new Error(
+      `La coleccion ${coleccion} no es permitida, ${colecciones}`
+    );
+  }
+
+  return true;
+};
+
 export {
   esRolValido,
   esEmailValido,
   existeUsuarioPorId,
   existeCategoriaPorId,
   existeProductoPorId,
+  coleccionesPermitidas,
 };
